@@ -119,7 +119,7 @@ export function AnalyticsPage() {
                   <XAxis type="number" />
                   <YAxis dataKey="party" type="category" width={50} />
                   <Tooltip
-                    formatter={(value: number, name: string) => [
+                    formatter={(value: number) => [
                       `${value} deputados`,
                       "Total",
                     ]}
@@ -160,7 +160,7 @@ export function AnalyticsPage() {
                       `${label}: ${percentage}%`
                     }
                   >
-                    {gender?.overall.map((entry, index) => (
+                    {gender?.overall.map((_, index) => (
                       <Cell
                         key={`cell-${index}`}
                         fill={GENDER_COLORS[index % GENDER_COLORS.length]}
